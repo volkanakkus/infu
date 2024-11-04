@@ -14,6 +14,24 @@ import open from 'open';
 
   const firstArg = args[0];
   const isHelp = firstArg === '--help' || firstArg === '-h';
+  const isDocs = firstArg === '--docs' || firstArg === '-d';
+
+  if (isDocs) {
+    console.log(
+      wordWrap(
+        `
+      You can find the how to give ${chalk.greenBright.bold(
+        'infu'
+      )} with this ${terminalLink(
+          chalk.red.bold('link'),
+          'https://infu.volkanakkus.com'
+        )}
+`.trim(),
+        { width: 200, trim: true }
+      )
+    );
+    return;
+  }
 
   if (isHelp) {
     console.log(
@@ -25,7 +43,7 @@ import open from 'open';
     ${chalk.blue.bold('Instructions:')}
       1. Go to the ${terminalLink(
         chalk.red.bold('infu website.'),
-        'https://infu.vercel.app'
+        'https://infu.volkanakkus.com'
       )}
       2. Enter your Github username and fill the form and save the ${chalk.greenBright.bold(
         'infu.json'
@@ -33,16 +51,21 @@ import open from 'open';
       3. Add the ${chalk.greenBright.bold(
         'infu.json'
       )} to your GitHub profile's main branch.
-      4. That's it! Now you can run '${chalk.greenBright.bold(
+      4. That's it! Now you can run ${chalk.greenBright.bold(
         'npx infu {username}'
-      )}' in your terminal.
+      )} in your terminal.
       
     ${chalk.blue.bold('Flags:')}
       --help, -h  Show help
 
     ${chalk.blue.bold('Examples:')}
-      $ npx infu volkanakkus
-      $ npx infu --help      
+      $ ${chalk.greenBright.bold('npx infu volkanakkus')}
+      $ ${chalk.greenBright.bold(
+        'npx infu --help'
+      )} or ${chalk.greenBright.bold('-h')}
+      $ ${chalk.greenBright.bold(
+        'npx infu --docs'
+      )} or ${chalk.greenBright.bold('-d')}
     ‎
 `.trim(),
         { width: 200, trim: true }
@@ -67,7 +90,7 @@ import open from 'open';
         Write your thoughts, share your links, import your cv or just say hi to the world.
 
         You can learn more ${terminalLink(
-          chalk.blueBright.bold('here.'),
+          chalk.blueBright.bold('here'),
           'https://github.com/volkanakkus/infu'
         )} or you can run ${chalk.greenBright.bold(
           'npx infu --help'
