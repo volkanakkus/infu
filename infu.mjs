@@ -77,8 +77,6 @@ import open from 'open';
   const username = firstArg || 'volkanakkus';
 
   if (!firstArg) {
-    //Here tell I'm volkan, I build this tool, show the code of help and make a divider and show my profile
-
     console.log(
       wordWrap(
         `
