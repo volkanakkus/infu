@@ -1,6 +1,6 @@
 # infu
 
-`infu` is a little CLI tool designed to let you share personalized messages, links, or even your CV directly from your terminal using your GitHub username. 
+`infu` is a little CLI tool designed to let you share personalized messages, links, thoughts from your terminal using your GitHub username. 
 
 This tool is perfect for quickly introducing yourself or sharing information through the terminal in a visually appealing and interactive way.
 
